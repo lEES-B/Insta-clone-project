@@ -54,9 +54,26 @@ body {
                     border-radius: 3px;
                 }
             }
-            p {
+            .or {
+                display: flex;
                 margin: 10px 40px 18px;
-                font-size: 13px;
+                .line {
+                    position: relative;
+                    top: .45em;
+                    width: 103px;
+                    height: 1px;
+                    background-color: $border;
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                }
+
+                p {
+                    display: inline-block;
+                    margin: 0 18px;
+                    background-color: #ffffff;
+                    font-size: 13px;
+                    z-index: 1;
+                }
             }
 
             .fbLogin {

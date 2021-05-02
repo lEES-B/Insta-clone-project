@@ -13,7 +13,11 @@ const Login = () => {
                     <button>로그인</button>
                 </div>
 
-                <p>또는</p>
+                <div className="or">
+                    <div className="line"></div>
+                    <p>또는</p>
+                    <div className="line"></div>
+                </div>
 
                 <div className="fbLogin">
                     <p className="fb">Facebook으로 로그인</p>
