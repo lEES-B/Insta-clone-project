@@ -16,6 +16,10 @@ function App() {
           <Main />
         </Route>
 
+        <Route path='/mypage'>
+          <Main />
+        </Route>
+
         <Route path="/:id"> 
           <div>
             <p>🚫 Invalid Page</p> 

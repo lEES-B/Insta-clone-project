@@ -1,7 +1,10 @@
 import React from 'react';
 import './Nav.scss';
+import { Link, useHistory } from 'react-router-dom'
 
 const Nav = () => {
+    let history = useHistory();
+
     return (
         <div className="nav">
             <div className="navContainer">
@@ -13,10 +16,14 @@ const Nav = () => {
                 </div>
 
                 <div className="icons">
-                    <span className="home"></span>
+                    <span className="home" onClick={() => {
+                        history.push('/main')
+                    }}></span>
                     <span className="message"></span>
                     <span className="like"></span>
-                    <span className="myPage"></span>
+                    <span className="myPage" onClick={() => {
+                        history.push('/mypage')
+                    }}></span>
                 </div>
             </div>
             

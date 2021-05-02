@@ -35,7 +35,7 @@ body {
                 span {
                     position: absolute;
                     top: 13px;
-                    left: 905px;
+                    left: 880px;
                     width: 25px;
                     height: 25px; 
                     color: $border;
@@ -56,12 +56,13 @@ body {
 
             .icons {
                 display: flex;
-                
+
                 span {
                     width: 30px;
                     height: 30px; 
                     margin-right: 20px;
                     background-size: 300px;
+                    cursor: pointer;
                 }
                 .home {
                     background-image: url('../../image/instagram-icons.png');
