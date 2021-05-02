@@ -12,15 +12,73 @@ body {
 
     .nav {
         width: 100%;
-        height: 30px;
+        height: 54px;
+        border-top: 1px solid $border;
+        border-bottom: 1px solid $border;
 
         .navContainer {
             display: flex;
+            justify-content: space-between;
             width: 974px;
-            padding: 0 20px;
+            padding: 10px 20px;
+            margin: auto;
 
             h4 {
+                margin: auto 0;
+                font-size: 30px;
                 font-family: 'Lobster', cursive, sans-serif;
+            }
+
+            .search {
+                display: flex;
+
+                span {
+                    position: absolute;
+                    top: 13px;
+                    left: 905px;
+                    width: 25px;
+                    height: 25px; 
+                    color: $border;
+                    background-image: url('../../image/instagram-icons.png');
+                    background-size: 200px;
+                    background-position: 85% 20%;
+                }
+                input {
+                    justify-content: center;
+                    width: 215px;
+                    height: 28px;
+                    padding: 7px auto;
+                    border: 1px solid $border;
+                    border-radius: 3px;
+                    text-align: center;
+                }
+            }
+
+            .icons {
+                display: flex;
+                
+                span {
+                    width: 30px;
+                    height: 30px; 
+                    margin-right: 20px;
+                    background-size: 300px;
+                }
+                .home {
+                    background-image: url('../../image/instagram-icons.png');
+                    background-position: 0% 48%;
+                }
+                .message {
+                    background-image: url('../../image/instagram-icons.png');
+                    background-position: 44% 20%;
+                }
+                .like {
+                    background-image: url('../../image/instagram-icons.png');
+                    background-position: 13% 20%;
+                }
+                .myPage {
+                    background-image: url('../../image/instagram-icons.png');
+                    background-position: 72% 20%;
+                }
             }
         }
     }
