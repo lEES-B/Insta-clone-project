@@ -1,6 +1,6 @@
 import React from 'react';
 import './Login.scss';
-
+import { Link } from 'react-router-dom'
 const Login = () => {
     return (
         <div className="login">
@@ -20,16 +20,17 @@ const Login = () => {
                 </div>
 
                 <div className="fbLogin">
-                    <p className="fb">
-                        <img src="../image/fb_logo.png" />
-                        Facebook으로 로그인
-                    </p>
+                    <div>
+                        <span></span>
+                        <p className="fb"> Facebook으로 로그인 </p>
+                    </div>
                     <p>비밀번호를 잊으셨나요?</p>
                 </div>
             </div>
 
             <div className="signup">
-                <p>계정이 없으신가요? 가입하기</p>
+                <span> 계정이 없으신가요? </span>
+                <Link to='/signup' className="signupBtn">가입하기</Link>
             </div>
         </div>
     );

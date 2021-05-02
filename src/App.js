@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Link, Route, Switch } from 'react-router-dom'
 import Login from './Components/Login/Login';
+import Signup from './Components/Signup/Signup';
 import Main from './Components/Main/Main';
 
 function App() {
@@ -10,6 +11,10 @@ function App() {
       <Switch>
         <Route path='/'>
           <Login />
+        </Route>
+
+        <Route path='/signup'>
+          <Signup />
         </Route>
 
         <Route path='/main'>
