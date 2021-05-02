@@ -36,12 +36,22 @@ body {
                 }
             }
 
-            .profile_content {
+            .profile_contents {
                 height: 150px;
                 width: 613px;
+                margin-bottom: 20px;
 
                 .profile_id {
                     display: flex;
+
+                    div {
+                        font-weight: 300;
+                        font-size: 28px;
+                        line-height: 32px;
+                    }
+                    button {
+                        margin-left: 20px;
+                    }
                 }
                 .count {
                     display: flex;
