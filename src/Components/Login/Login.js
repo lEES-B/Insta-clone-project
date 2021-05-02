@@ -20,7 +20,7 @@ const Login = () => {
                 </div>
 
                 <div className="fbLogin">
-                    <p className="fb">Facebook으로 로그인</p>
+                    <p className="fb"><img src="../image/fb_logo.png" />Facebook으로 로그인</p>
                     <p>비밀번호를 잊으셨나요?</p>
                 </div>
             </div>
