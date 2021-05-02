@@ -38,7 +38,7 @@ const Login = () => {
 
             <div className="signup">
                 <span> 계정이 없으신가요? </span>
-                <Link to='/signup' className="signupBtn">가입하기</Link>
+                <span className="signupBtn">가입하기</span>
             </div>
         </div>
     );

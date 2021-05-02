@@ -2,19 +2,14 @@ import React from 'react';
 import './App.scss';
 import { Link, Route, Switch } from 'react-router-dom'
 import Login from './Components/Login/Login';
-import Signup from './Components/Signup/Signup';
 import Main from './Components/Main/Main';
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path='/'>
+        <Route exact path='/'>
           <Login />
-        </Route>
-
-        <Route path='/signup'>
-          <Signup />
         </Route>
 
         <Route path='/main'>
