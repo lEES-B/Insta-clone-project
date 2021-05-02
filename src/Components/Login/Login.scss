@@ -79,6 +79,9 @@ body {
             .fbLogin {
                 .fb {
                     color: $fb_color;
+                    img {
+                        margin-right: 8px;
+                    }
                 }
             }
         }
