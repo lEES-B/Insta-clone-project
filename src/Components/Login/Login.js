@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom'
+
 const Login = () => {
+
+    let [inputId, setInputId] = useState('');
+
     return (
         <div className="login">
             <div className="signin">
                 <h1>Instagram</h1>
 
                 <div className="info">
-                    <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-                    <input type="password" placeholder="비밀번호" />
-                    <button>로그인</button>
+                    <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={(e) => {
+                        setInputId(e.target.value)
+                    }} />
+                    <input type="password" placeholder="비밀번호" onChange={(e) => {
+                        setInputId(e.target.value)
+                    }} />
+                    <Link to='/main' className="loginBtn">로그인</Link>
                 </div>
 
                 <div className="or">

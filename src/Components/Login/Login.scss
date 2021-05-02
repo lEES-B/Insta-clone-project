@@ -47,13 +47,15 @@ body {
                     outline: none;
                 }
 
-                button {
+                .loginBtn {
                     margin: 8px 40px;
                     padding: 8px;
                     color: #ffffff;
                     background-color: $lightBlue;
                     border: 0;
                     border-radius: 3px;
+                    font-size: 14px;
+                    text-decoration: none;
                     cursor: pointer;
                 }
             }
