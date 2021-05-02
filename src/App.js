@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Link, Route, Switch } from 'react-router-dom'
 import Login from './Components/Login/Login';
+import Main from './Components/Main/Main';
 
 function App() {
   return (
@@ -9,6 +10,10 @@ function App() {
       <Switch>
         <Route path='/'>
           <Login />
+        </Route>
+
+        <Route path='/main'>
+          <Main />
         </Route>
 
         <Route path="/:id"> 

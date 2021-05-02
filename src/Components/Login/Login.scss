@@ -1,0 +1,45 @@
+// color
+$border:  #dbdbdb;
+$fb_color: #385185;
+$lightBlue: #0095f6;
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #fafafa;
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 710px;
+        margin: auto;
+        
+        .signin {
+            width: 100%;
+            height: 380px;
+            margin: 0 0 10px;
+            padding: 10px 0;
+            background-color: #ffffff;
+            border: 1px solid $border;
+            button {
+                background-color: $lightBlue;
+            }
+            .fbLogin {
+                .fb {
+                    color: $fb_color;
+                }
+            }
+        }
+
+        .signup {
+            width: 100%;
+            height: 63px;
+            margin: 0 0 10px;
+            padding: 10px 0;
+            background-color: #ffffff;
+            border: 1px solid $border;
+        }
+    }
+}

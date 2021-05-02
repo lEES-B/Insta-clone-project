@@ -16,7 +16,7 @@ const Login = () => {
                 <p>또는</p>
 
                 <div className="fbLogin">
-                    <p>Facebook으로 로그인</p>
+                    <p className="fb">Facebook으로 로그인</p>
                     <p>비밀번호를 잊으셨나요?</p>
                 </div>
             </div>
