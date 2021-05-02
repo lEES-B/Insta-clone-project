@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 // color
 $border:  #dbdbdb;
 $fb_color: #385185;
@@ -23,9 +25,40 @@ body {
             padding: 10px 0;
             background-color: #ffffff;
             border: 1px solid $border;
-            button {
-                background-color: $lightBlue;
+
+            h1 {
+                margin: 22px auto 12px;
+                font-size: 35px;
+                font-family: 'Lobster', cursive, sans-serif;
             }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                margin: 38px 0 0;
+
+                input {
+                    margin: 0 40px 6px;
+                    padding: 14px 0 8px 8px;
+                    background-color: #e8f0fe;
+                    border: $border;
+                    border-radius: 3px;
+                }
+
+                button {
+                    margin: 8px 40px;
+                    padding: 8px;
+                    color: #ffffff;
+                    background-color: $lightBlue;
+                    border: 0;
+                    border-radius: 3px;
+                }
+            }
+            p {
+                margin: 10px 40px 18px;
+                font-size: 13px;
+            }
+
             .fbLogin {
                 .fb {
                     color: $fb_color;

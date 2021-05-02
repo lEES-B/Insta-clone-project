@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <div className="login">
             <div className="signin">
-                <h4>Instagram</h4>
+                <h1>Instagram</h1>
 
                 <div className="info">
                     <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
