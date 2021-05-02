@@ -3,6 +3,7 @@ import './App.scss';
 import { Link, Route, Switch } from 'react-router-dom'
 import Login from './Components/Login/Login';
 import Main from './Components/Main/Main';
+import Mypage from './Components/Mypage/Mypage'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         </Route>
 
         <Route path='/mypage'>
-          <Main />
+          <Mypage />
         </Route>
 
         <Route path="/:id"> 
