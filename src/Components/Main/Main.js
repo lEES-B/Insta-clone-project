@@ -8,10 +8,10 @@ const Main = () => {
             <Nav />
 
             <div className="main_container">
-                
+
                 <div className="main_left">
-                    <div className="user_lists">sdfsd</div>
-                    <div className="feeds">sdfds</div>
+                    <div className="user_lists">상단 유저 피드</div>
+                    <div className="feeds">피드 콘텐츠</div>
                 </div>
 
                 <div className="main_right">
