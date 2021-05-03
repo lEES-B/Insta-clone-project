@@ -15,7 +15,38 @@ const Main = () => {
                 </div>
 
                 <div className="main_right">
-                    sdfsdfsdfsdfsfsdfds
+                    <div className="myInfo">
+                        <img src="../../img/fb_logo.png" />
+                        <div className="myId">
+                            <p>MyInstaId05</p>
+                            <p>새봄</p>
+                        </div>
+                        <span>전환</span>
+                    </div>
+
+                    <div className="recommend">
+                        <div className="title">
+                            <span>회원님을 위한 추천</span>
+                            <span>모두 모기</span>
+                        </div>
+
+                        <div className="contents">
+                            <img src="../../img/fb_logo.png" />
+                            <div className="myId">
+                                <p>MyInstaId05</p>
+                                <p>회원님을 위한 추천</p>
+                            </div>
+                            <span>팔로우</span>
+                        </div>
+                        <div className="contents"></div>
+                        <div className="contents"></div>
+                        <div className="contents"></div>
+                        <div className="contents"></div>
+                    </div>
+
+                    <div className="side_info">
+                        <p>소개.도움말.홍보 센터.API.채용정보.개인정보처리방침</p>
+                    </div>
                 </div>
             </div>
         </div>
