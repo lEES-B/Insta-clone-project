@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Nav from '../Nav/Nav';
 import './Mypage.scss';
 
+
 const Mypage = () => {
+
+    let [posts, setPosts] = useState(101);
+    let [follower, setFollower] = useState(307);
+    let [follow, setFollow] = useState(711)
+    let [data, setData] = useState('');
+    //console.log(data)
+
+    useEffect(() => {
+        axios.get('https://randomuser.me/api?results=50')
+            .then((result) => {
+                console.log(result.data)
+            })
+            .catch(() => {console.log('failure')})
+    })
+
     return (
         <div className="mypage">
             <Nav />
@@ -14,15 +31,51 @@ const Mypage = () => {
 
                 <div className="profile_contents">
                     <div className="profile_id">
-                        <div>id</div>
+                        <h2> MyInstaId05 </h2>
                         <button>프로필편집</button>
                     </div>
-                    <div className="count">
-                        <span>게시물 26</span>
-                        <span>팔로워 45</span>
-                        <span>팔로우 34</span>
-                    </div>
+                    <ul className="count">
+                        <li> 게시물 <strong>{ posts }</strong> </li>
+                        <li> 팔로워 <strong>{ follower }</strong> </li>
+                        <li> 팔로우 <strong>{ follow }</strong> </li>
+                    </ul>
+                    <p>새봄</p>
                 </div>
+            </div>
+
+            <div className="category">
+                <ul>
+                    <li>
+                        <span className="post"></span>
+                        <span>게시물</span>
+                    </li>
+                    <li>
+                        <span className="igtv"></span>
+                        <span>IGTV</span>
+                    </li>
+                    <li>
+                        <span className="save"></span>
+                        <span>저장됨</span>
+                    </li>
+                    <li>
+                        <span className="tag"></span>
+                        <span>태그됨</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div className="feeds">
+                {/* {
+                    data.map((a, i) => {
+                        return (
+                            <div className="feed_line">
+                                <div> {a[i]} </div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        )
+                    }) 
+                }*/}
             </div>
         </div>
     );

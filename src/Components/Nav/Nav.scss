@@ -33,9 +33,9 @@ body {
                 display: flex;
 
                 span {
-                    position: absolute;
-                    top: 13px;
-                    left: 880px;
+                    position: relative;
+                    top: 3px;
+                    left: 80px;
                     width: 25px;
                     height: 25px; 
                     color: $border;
