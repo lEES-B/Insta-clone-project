@@ -5,6 +5,7 @@ $lightBlue: #0095f6;
 $text_grey: #8e8e8e;
 
 .main_container {
+    position: relative;
     margin: 0 auto;
     padding-top: 30px;
     max-width: 935px;
@@ -234,9 +235,9 @@ $text_grey: #8e8e8e;
     }
 
     .main_right {
-        position: fixed;
-        top: 88px;
-        left: 1025px;
+        position: absolute;
+        top: 30px;
+        right: 0;
         right: 0;
         display: flex;
         flex-direction: column;
