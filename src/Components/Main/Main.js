@@ -5,33 +5,41 @@ import './Main.scss';
 
 const Main = () => {
 
-    let [users, setUsers] = useState([]);
+    let [users, setUsers] = useState([
+        {
+            name: 'ashley',
+            country: 'ireland',
+            picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
+        },
+        {
+            name: 'billy',
+            country: 'ohio',
+            picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
+        }
+    ]);
 
     useEffect(() => {
         axios.get('https://randomuser.me/api?results=50')
         .then((result) => {
-            console.log(result.data)
-            setUsers([...result.data])
+            //console.log(result.data)
+            setUsers([...users, ...result.data])
         })
         .catch(() => {console.log('failure')})
-    })
+    }, [])
 
     return (
         <div>
             <Nav />
-
             <div className="main_container">
-
-                <div className="main_left">
-                    
+                <div className="main_left">                   
                     <div className="user_container">
                         <ul className="user_lists">
                             {
                                 users.map((a,i) => {
                                     return (
                                         <li key={i}>
-                                            <div> {a[i]} </div>
-                                            <p>users__id</p>
+                                            <img src={users[i].picture.large} />
+                                            <p> { users[i].name } </p>
                                         </li>
                                     )
                                 })
@@ -41,44 +49,49 @@ const Main = () => {
 
                     <div className="feeds">
                         <ul className>
-                            {/* feeds 반복문 돌리기(axios로 받아오기) */}
-                            <li>
-                                <article>
-                                    <div className="id_info">
-                                        <div>img</div>
-                                        <div className="id_info_user">
-                                            <p>users__id</p>
-                                            <p>location</p>
-                                        </div>
-                                    </div>
+                            {
+                                users.map((a,i) => {
+                                    return (
+                                        <li key={i}>
+                                            <article>
+                                                <div className="id_info">
+                                                    <img src={users[i].picture.large} />
+                                                    <div className="id_info_user">
+                                                        <p> { users[i].name } </p>
+                                                        <p> { users[i].country } </p>
+                                                    </div>
+                                                </div>
 
-                                    <div className="img_info">
-                                        <div>img</div>
-                                    </div>
+                                                <div className="img_info">
+                                                    <img src= { users[i].picture.large } />
+                                                </div>
 
-                                    <div className="review_info">
-                                        <div className="icons">
-                                            <div className="icons_left">
-                                                <div className="heart"></div>
-                                                <div className="review"></div>
-                                                <div className="message"></div>
-                                            </div>
-                                            <div className="icons_right">
-                                                <div className="save"></div>
-                                            </div>
-                                        </div>
+                                                <div className="review_info">
+                                                    <div className="icons">
+                                                        <div className="icons_left">
+                                                            <div className="heart"></div>
+                                                            <div className="review"></div>
+                                                            <div className="message"></div>
+                                                        </div>
+                                                        <div className="icons_right">
+                                                            <div className="save"></div>
+                                                        </div>
+                                                    </div>
 
-                                        <div className="reviews"></div>
+                                                    <div className="reviews"></div>
 
-                                        <div className="write">
-                                            <input type="text" placeholder="댓글달기.."></input>
-                                            <button>게시</button>
-                                        </div>
-                                    </div>
+                                                    <div className="write">
+                                                        <input type="text" placeholder="댓글달기.."></input>
+                                                        <button>게시</button>
+                                                    </div>
+                                                </div>
+                                            </article>
 
-                                </article>
-
-                            </li>
+                                </li>
+                                    )
+                                })
+                                
+                            }
                         </ul>
                     </div>
                 </div>

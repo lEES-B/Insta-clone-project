@@ -7,6 +7,7 @@ $lightBlue: #0095f6;
     margin: 0 auto;
     padding-top: 30px;
     max-width: 935px;
+    border-radius: 3px;
 
     .main_left {
         display: flex;
@@ -24,12 +25,30 @@ $lightBlue: #0095f6;
             border-radius: 3px;
 
             .user_lists {
+                position: relative;
+                height: 50px;
+                display: flex;
+                // justify-content: space-evenly;
                 list-style: none;
 
                 li {
+                    position: absolute;
+                    top: -20px;               
+                    margin: 0;
+                    padding: 0;
                     img {
                         width: 66px;
-                        height: 66px; 
+                        height: 66px;
+                        padding: 2px; 
+                        border: 2px solid #c42d91;
+                        border-radius: 50%;
+                    }
+
+                    p {
+                        margin: 0;
+                        letter-spacing: .01em;
+                        font-size: 12px;
+                        line-height: 14px;
                     }
                 }
             }
@@ -40,7 +59,6 @@ $lightBlue: #0095f6;
             flex-direction: column;
             align-items: stretch;
             height: auto;
-            border: 1px solid $border;
 
             ul {
                 display: flex;
@@ -61,10 +79,20 @@ $lightBlue: #0095f6;
                         border: 1px solid $border;
 
                         .id_info {
+                            position: relative;
                             display: flex;
                             height: 60px;
                             padding: 16px;
                             border-bottom: 1px solid $border;
+
+                            img {
+                                position: absolute;
+                                top: 15px;
+                                left: 10px;
+                                width: 42px;
+                                height: 42px;
+                                border-radius: 50%;
+                            }
 
                             .id_info_user {
                                 display: flex;
@@ -72,6 +100,7 @@ $lightBlue: #0095f6;
                                 margin: 0;
                                 margin-left: 20px;
                                 padding: 0;
+                                padding-left: 30px;
 
                                 p {
                                     margin: 0;
@@ -83,7 +112,7 @@ $lightBlue: #0095f6;
                             position: relative;
                             width: 100%;
 
-                            div {
+                            img {
                                 position: absolute;
                                 top: 0;
                                 left: 0;
@@ -91,7 +120,7 @@ $lightBlue: #0095f6;
                                 height: 400px;
                                 background-image: url('../../image/profile_img.jpg');
                                 background-position: center;
-                                background-size: cover;
+                                background-size: contain;
                                 border-bottom: 1px solid $border;
                             }
                         }
