@@ -28,7 +28,7 @@ const Main = () => {
                             {/* user 반복문 돌리기(axios로 받아오기) */}
                
                             <li>
-                                <imn src="{user}" />
+                                <img src="{user}" />
                             </li>
                         </ul>
                     </div>

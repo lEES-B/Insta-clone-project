@@ -63,6 +63,25 @@ body {
                     margin-right: 20px;
                     background-size: 300px;
                     cursor: pointer;
+
+                    ul {
+                        display: none;
+                        width: 100px;
+                        height: auto;
+                        padding: 10px 0;
+                        border: 0;
+                        position: absolute;
+                        top: 30px;
+                        left: -30px;
+                        list-style: none;
+
+                        li {
+                            display: block;
+                            padding: 3px;
+                        }
+                    }
+
+
                 }
                 .home {
                     background-image: url('../../image/instagram-icons.png');
@@ -77,8 +96,13 @@ body {
                     background-position: 13% 20%;
                 }
                 .myPage {
+                    position: relative;
                     background-image: url('../../image/instagram-icons.png');
                     background-position: 72% 20%;
+                }
+
+                .myPage:hover ul{
+                    display: block;
                 }
             }
         }

@@ -21,9 +21,16 @@ const Nav = () => {
                     }}></span>
                     <span className="message"></span>
                     <span className="like"></span>
-                    <span className="myPage" onClick={() => {
-                        history.push('/mypage')
-                    }}></span>
+                    <span className="myPage">
+                        <ul>
+                            <li onClick={() => {
+                                history.push('/mypage')
+                            }}>프로필</li>
+                            <li onClick={() => {
+                                history.push('/login')
+                            }}>로그아웃</li>
+                        </ul>
+                    </span>
                 </div>
             </div>
             
