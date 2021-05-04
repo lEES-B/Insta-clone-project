@@ -114,8 +114,8 @@ const Main = () => {
                     <div className="myInfo">
                         <div className="myImg"></div>
                         <div className="myId">
-                            <p>MyInstaId05</p>
-                            <p>새봄</p>
+                            <p><strong>MyInstaId05</strong></p>
+                            <p className="myName">새봄</p>
                         </div>
                         <span>전환</span>
                     </div>
@@ -123,7 +123,7 @@ const Main = () => {
                     <div className="recommend">
                         <div className="title">
                             <span>회원님을 위한 추천</span>
-                            <span>모두 모기</span>
+                            <span >모두 보기</span>
                         </div>
 
                         <div className="contents">

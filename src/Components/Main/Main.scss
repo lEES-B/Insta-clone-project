@@ -2,6 +2,7 @@
 $border:  #dbdbdb;
 $fb_color: #385185;
 $lightBlue: #0095f6;
+$text_grey: #8e8e8e;
 
 .main_container {
     margin: 0 auto;
@@ -217,6 +218,12 @@ $lightBlue: #0095f6;
                                     font-weight: 600;
                                     border: 0;
                                     opacity: .3;
+                                    cursor: pointer;
+                                }
+
+                                button:hover {
+                                    font-weight: 700;
+                                    opacity: 1;
                                 }
                             }
                         }
@@ -239,17 +246,40 @@ $lightBlue: #0095f6;
         margin-bottom: 30px;
 
         .myInfo {
+            position: relative;
             display: flex;
-            justify-content: space-between;
+            height: auto;
+            margin-bottom: 10px;
+            margin-top: 18px;
             border: 1px solid $border;
 
             .myImg {
                 margin-right: 12px;
-                width: 50px;
-                height: 50px;
+                width: 66px;
+                height: 66px;
                 background-image: url('../../image/profile_img.jpg');
                 background-size: cover;
                 border-radius: 50%;
+            }
+
+            .myId {
+                margin-top: 10px;
+                font-size: 14px;
+                p {
+                    margin: 0;
+                    text-align: left;
+                }
+
+                .myName {
+                    margin-top: 5px;
+                    color: $text_grey;
+                }
+
+                span {
+                    position: absolute;
+                    top: 10px;
+                    right: 0;
+                }
             }
         }
     }
