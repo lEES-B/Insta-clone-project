@@ -75,12 +75,15 @@ body {
                         left: -30px;
                         list-style: none;
 
-                        li {
+                        ul:hover li {
                             display: block;
                             padding: 3px;
+
+                            li:hover{
+                                display: block;
+                            }
                         }
                     }
-
 
                 }
                 .home {
@@ -104,6 +107,7 @@ body {
                 .myPage:hover ul{
                     display: block;
                 }
+
             }
         }
     }
