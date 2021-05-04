@@ -9,7 +9,7 @@ const Mypage = () => {
     let [posts, setPosts] = useState(101);
     let [follower, setFollower] = useState(307);
     let [follow, setFollow] = useState(711)
-    let [data, setData] = useState('');
+    let [data, setData] = useState();
     //console.log(data)
 
     useEffect(() => {

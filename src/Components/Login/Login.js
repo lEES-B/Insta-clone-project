@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Login.scss';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 const Login = () => {
-
+    let history = useHistory();
     let [inputId, setInputId] = useState('');
+    let [inputPw, setInputPw] = useState('');
 
     return (
         <div className="login">
@@ -16,9 +17,15 @@ const Login = () => {
                         setInputId(e.target.value)
                     }} />
                     <input type="password" placeholder="비밀번호" onChange={(e) => {
-                        setInputId(e.target.value)
+                        setInputPw(e.target.value)
                     }} />
-                    <Link to='/main' className="loginBtn">로그인</Link>
+                    <button className="loginBtn" onClick={() => {
+                        {
+                            inputId === 'bombom' && inputPw === '1234'
+                                ? history.push('/main')
+                                : alert('아이디 또는 비밀번호가 맞지 않습니다')
+                        }
+                    }}>로그인</button>
                 </div>
 
                 <div className="or">
