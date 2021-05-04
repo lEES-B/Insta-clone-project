@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Nav from '../Nav/Nav';
 import './Main.scss';
 
 const Main = () => {
+
+    let [user, setUser] = useState([]);
+
+    useEffect(() => {
+        axios.get('https://randomuser.me/api?results=50')
+        .then((result) => {
+            console.log(result.data)
+            setUser([...result.data])
+        })
+        .catch(() => {console.log('failure')})
+    })
+
     return (
         <div>
             <Nav />
@@ -10,8 +23,54 @@ const Main = () => {
             <div className="main_container">
 
                 <div className="main_left">
-                    <div className="user_lists">상단 유저 피드</div>
-                    <div className="feeds">피드 콘텐츠</div>
+                    <div className="user_container">
+                        <ul className="user_lists">
+                            {/* user 반복문 돌리기(axios로 받아오기) */}
+               
+                            <li>
+                                <imn src="{user}" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="feeds">
+                        <ul className="feeds_container">
+                            {/* feeds 반복문 돌리기(axios로 받아오기) */}
+                            <li>
+                                <article>
+                                    <div className="id_info">
+                                        <img src="/" ></img>
+                                        <p>3.76kg</p>
+                                    </div>
+
+                                    <div className="img_info">
+                                        <img src="/" />
+                                    </div>
+
+                                    <div className="review_info">
+                                        <div className="icons">
+                                            <div className="icons_left">
+                                                <div className="heart"></div>
+                                                <div className="review"></div>
+                                                <div className="message"></div>
+                                            </div>
+                                            <div className="icons_right">
+                                                <div className="save"></div>
+                                            </div>
+                                        </div>
+
+                                        <div className="reviews"></div>
+
+                                        <div className="write">
+                                            <input type="text" placeholder="댓글달기.."></input>
+                                            <button>게시</button>
+                                        </div>
+                                    </div>
+
+                                </article>
+
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="main_right">
@@ -38,6 +97,7 @@ const Main = () => {
                             </div>
                             <span>팔로우</span>
                         </div>
+                        {/* 추천리스트 반복문 돌리기(axios로 받아오기) */}
                         <div className="contents"></div>
                         <div className="contents"></div>
                         <div className="contents"></div>
