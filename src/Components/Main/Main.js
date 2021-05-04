@@ -17,6 +17,8 @@ const Main = () => {
             picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
         }
     ]);
+    let [love, setLove] = useState(0);
+    let [review, setReview] = useState('')
 
     useEffect(() => {
         axios.get('https://randomuser.me/api?results=50')
@@ -57,7 +59,7 @@ const Main = () => {
                                                 <div className="id_info">
                                                     <img src={users[i].picture.large} />
                                                     <div className="id_info_user">
-                                                        <p> { users[i].name } </p>
+                                                        <p><strong> { users[i].name } </strong></p>
                                                         <p> { users[i].country } </p>
                                                     </div>
                                                 </div>
@@ -69,7 +71,9 @@ const Main = () => {
                                                 <div className="review_info">
                                                     <div className="icons">
                                                         <div className="icons_left">
-                                                            <div className="heart"></div>
+                                                            <div className="heart" onClick={() => {
+                                                                setLove(love+1)
+                                                            }}></div>
                                                             <div className="review"></div>
                                                             <div className="message"></div>
                                                         </div>
@@ -78,11 +82,21 @@ const Main = () => {
                                                         </div>
                                                     </div>
 
-                                                    <div className="reviews"></div>
+                                                    <div className="reviews">
+                                                        <p><strong>좋아요 {love}개</strong></p>
+                                                        <div className="users_reviews">{ review }</div>
+                                                    </div>
 
                                                     <div className="write">
-                                                        <input type="text" placeholder="댓글달기.."></input>
-                                                        <button>게시</button>
+                                                        <input type="text" placeholder="댓글달기.." onChange={(e) => {
+                                                            setReview(e.target.value)
+                                                        }} />
+                                                        <button onClick={() => {
+                                                            let reviewCopy = [...review]
+                                                            let inputCopy = review;
+                                                            reviewCopy.unshift(inputCopy)
+                                                            setReview(reviewCopy)
+                                                        }}>게시</button>
                                                     </div>
                                                 </div>
                                             </article>
@@ -98,7 +112,7 @@ const Main = () => {
 
                 <div className="main_right">
                     <div className="myInfo">
-                        <img src="../../img/fb_logo.png" />
+                        <div className="myImg"></div>
                         <div className="myId">
                             <p>MyInstaId05</p>
                             <p>새봄</p>
