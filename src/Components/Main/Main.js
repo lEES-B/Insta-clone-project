@@ -50,11 +50,11 @@ const Main = () => {
                     </div>
 
                     <div className="feeds">
-                        <ul className>
+                        <div className="feeds_form">
                             {
                                 users.map((a,i) => {
                                     return (
-                                        <li key={i}>
+                                        <div className="feeds_container" key={i}>
                                             <article>
                                                 <div className="id_info">
                                                     <img src={users[i].picture.large} />
@@ -100,13 +100,12 @@ const Main = () => {
                                                     </div>
                                                 </div>
                                             </article>
-
-                                </li>
+                                        </div>
                                     )
                                 })
                                 
                             }
-                        </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -123,26 +122,33 @@ const Main = () => {
                     <div className="recommend">
                         <div className="title">
                             <span>회원님을 위한 추천</span>
-                            <span >모두 보기</span>
+                            <span className="all">모두 보기</span>
                         </div>
 
                         <div className="contents">
-                            <img src="../../img/fb_logo.png" />
-                            <div className="myId">
-                                <p>MyInstaId05</p>
-                                <p>회원님을 위한 추천</p>
-                            </div>
-                            <span>팔로우</span>
+                            {
+                                users.map((a,i) => {
+                                    return (
+                                        <div className="user_contents">
+                                            <img src={users[i].picture.large} />
+                                            <div className="myId">
+                                                <p> <strong>{users[i].name}</strong> </p>
+                                                <p>회원님을 위한 추천</p>
+                                            </div>
+                                            <span>팔로우</span>
+                                        </div>
+                                    )
+                                })
+ 
+                            }
                         </div>
-                        {/* 추천리스트 반복문 돌리기(axios로 받아오기) */}
-                        <div className="contents"></div>
-                        <div className="contents"></div>
-                        <div className="contents"></div>
-                        <div className="contents"></div>
+       
                     </div>
 
                     <div className="side_info">
-                        <p>소개.도움말.홍보 센터.API.채용정보.개인정보처리방침</p>
+                        <p>소개.도움말.홍보 센터.API.채용정보.<br />
+                        개인정보처리방침.약관.위치.인기계정.해시태그.언어</p>
+                        <p>2021 INSTAGRAM FROM FACEBOOK</p>
                     </div>
                 </div>
             </div>
