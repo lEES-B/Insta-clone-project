@@ -91,12 +91,12 @@ const Main = () => {
                                                         <input type="text" placeholder="댓글달기.." onChange={(e) => {
                                                             setReview(e.target.value)
                                                         }} />
-                                                        <button onClick={() => {
+                                                        <div className="btn" onClick={() => {
                                                             let reviewCopy = [...review]
                                                             let inputCopy = review;
                                                             reviewCopy.unshift(inputCopy)
                                                             setReview(reviewCopy)
-                                                        }}>게시</button>
+                                                        }}>게시</div>
                                                     </div>
                                                 </div>
                                             </article>

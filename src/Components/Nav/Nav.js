@@ -24,7 +24,7 @@ const Nav = () => {
                     <span className="myPage">
                         <ul>
                             <li onClick={() => {
-                                history.push('/main')
+                                history.push('/mypage')
                             }}>프로필</li>
                             <li onClick={() => {
                                 history.push('/')
