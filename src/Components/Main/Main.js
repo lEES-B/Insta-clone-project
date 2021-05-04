@@ -5,13 +5,13 @@ import './Main.scss';
 
 const Main = () => {
 
-    let [user, setUser] = useState([]);
+    let [users, setUsers] = useState([]);
 
     useEffect(() => {
         axios.get('https://randomuser.me/api?results=50')
         .then((result) => {
             console.log(result.data)
-            setUser([...result.data])
+            setUsers([...result.data])
         })
         .catch(() => {console.log('failure')})
     })
@@ -23,27 +23,37 @@ const Main = () => {
             <div className="main_container">
 
                 <div className="main_left">
+                    
                     <div className="user_container">
                         <ul className="user_lists">
-                            {/* user 반복문 돌리기(axios로 받아오기) */}
-               
-                            <li>
-                                <img src="{user}" />
-                            </li>
+                            {
+                                users.map((a,i) => {
+                                    return (
+                                        <li key={i}>
+                                            <div> {a[i]} </div>
+                                            <p>users__id</p>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
+
                     <div className="feeds">
-                        <ul className="feeds_container">
+                        <ul className>
                             {/* feeds 반복문 돌리기(axios로 받아오기) */}
                             <li>
                                 <article>
                                     <div className="id_info">
-                                        <img src="/" ></img>
-                                        <p>3.76kg</p>
+                                        <div>img</div>
+                                        <div className="id_info_user">
+                                            <p>users__id</p>
+                                            <p>location</p>
+                                        </div>
                                     </div>
 
                                     <div className="img_info">
-                                        <img src="/" />
+                                        <div>img</div>
                                     </div>
 
                                     <div className="review_info">

@@ -24,10 +24,10 @@ const Nav = () => {
                     <span className="myPage">
                         <ul>
                             <li onClick={() => {
-                                history.push('/mypage')
+                                history.push('/main')
                             }}>프로필</li>
                             <li onClick={() => {
-                                history.push('/login')
+                                history.push('/')
                             }}>로그아웃</li>
                         </ul>
                     </span>

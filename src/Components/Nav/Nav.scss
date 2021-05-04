@@ -75,11 +75,12 @@ body {
                         position: absolute;
                         top: 0px;
                         left: -30px;
+                        background-color: #fff;
                         list-style: none;
+                        z-index: 1;
 
                         ul:hover li {
                             display: block;
-                            padding: 3px;
 
                             li:hover{
                                 display: block;
@@ -87,6 +88,7 @@ body {
                         }
 
                         li {
+                            padding: 10px;
                             cursor: pointer;
                         }
                     }
