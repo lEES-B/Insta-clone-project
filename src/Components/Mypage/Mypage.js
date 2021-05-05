@@ -70,8 +70,10 @@ const Mypage = (props) => {
                         return (
                             <div key={i}>
                             {
-                                (i % 3 === 2)  && (i !== 0)
-                                ? ( <img className="feednext" src={props.feed[i].picture.medium} />)
+                                (i % 3 === 0) && (i !== 0)
+                                ? ( <p>
+                                        <img className="feednext" src={props.feed[i].picture.medium} />
+                                    </p>)
                                 : ( <img className="feed" src={props.feed[i].picture.medium} /> )
                             }  
                             </div>

@@ -134,23 +134,25 @@ body {
 
         .feeds {
             display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
             margin: 10px auto 0;
             max-width: 935px;
             width: 100%;
-            flex-wrap: nowrap;
 
             .feed {
-                display: inline-block;
+                float: left;
                 width: 293px;
                 height: 293px;
                 margin: 0 28px 28px 0;
             }
 
             .feednext {
-           
+                float: left;
                 width: 293px;
                 height: 293px;
-                margin-bottom: 28px;
+                margin-right: 0;
+                
             }
         }
     }
