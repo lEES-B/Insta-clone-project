@@ -37,7 +37,7 @@ $text_grey: #8e8e8e;
                     top: -20px;               
                     margin: 0;
                     padding: 0;
-                    
+
                     img {
                         width: 66px;
                         height: 66px;
@@ -309,6 +309,8 @@ $text_grey: #8e8e8e;
                 display: flex;
                 flex-direction: column;
                 margin-top: 15px;
+                height: 235px;
+                overflow: hidden;
 
                 .user_contents {
                     display: flex;
@@ -338,7 +340,7 @@ $text_grey: #8e8e8e;
         }
 
         .side_info {
-            margin-top: 15px;
+            margin-top: 10px;
             color: $text_grey;
             text-align: left;
             font-size: 11px;
