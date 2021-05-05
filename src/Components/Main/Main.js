@@ -42,7 +42,8 @@ const Main = (props) => {
         <div>
             <Nav />
             <div className="main_container">
-                <div className="main_left">                   
+                <div className="main_left">
+                    
                     <div className="user_container">
                         <div className="user_lists">
                             {
