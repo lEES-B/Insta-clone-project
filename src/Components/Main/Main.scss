@@ -21,35 +21,33 @@ $text_grey: #8e8e8e;
 
         .user_container {
             margin: 0 0 24px;
-            padding: 16px 0;
+            padding: 16px 0 14px;
             border: 1px solid $border;
             border-radius: 3px;
 
             .user_lists {
                 position: relative;
-                width: 100%;
-                height: 80px;
+                width: 98%;
+                height: 84px;
+                padding-left: 10px;
                 display: flex;
-                // justify-content: space-evenly;
-                overflow-y: hidden;
+                overflow: hidden;
 
-                div {
-                    position: absolute;
-                    top: -20px;               
+                div {   
+                    width: 100%;   
                     margin: 0;
-                    padding: 0;
+                    padding-right: 10px;
 
                     img {
                         width: 64px;
                         height: 64px;
-                        margin-top: 20px;
                         padding: 2px; 
                         border: 2px solid #c42d91;
                         border-radius: 50%;
                     }
 
                     p {
-                        margin: 0;
+                        margin: 2px;
                         letter-spacing: .01em;
                         font-size: 12px;
                         line-height: 3px;

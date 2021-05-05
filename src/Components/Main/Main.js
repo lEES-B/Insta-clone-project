@@ -139,7 +139,7 @@ const Main = (props) => {
                             {
                                 props.users.map((a,i) => {
                                     return (
-                                        <div className="user_contents">
+                                        <div className="user_contents" key={i}>
                                             <img src={props.users[i].picture.large} />
                                             <div className="myId">
                                                 <p> <strong>{props.users[i].name.last}</strong> </p>
@@ -149,7 +149,6 @@ const Main = (props) => {
                                         </div>
                                     )
                                 })
- 
                             }
                         </div>
        
