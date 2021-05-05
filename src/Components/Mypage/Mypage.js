@@ -7,19 +7,18 @@ import { connect } from 'react-redux';
 
 const Mypage = (props) => {
 
-    let [posts, setPosts] = useState(101);
-    let [follower, setFollower] = useState(307);
-    let [follow, setFollow] = useState(711)
-    let [data, setData] = useState();
-    //console.log(data)
+    // let [data, setData] = useState([]);
 
-    useEffect(() => {
-        axios.get('https://randomuser.me/api?results=50')
-            .then((result) => {
-                console.log(result.data)
-            })
-            .catch(() => {console.log('failure')})
-    })
+    // useEffect(() => {
+    //     axios.get('https://randomuser.me/api?results=50')
+    //         .then((result) => {
+    //             console.log(result.data.results)  
+    //             let copy = data;
+    //             copy.push(result.data.results);
+    //             setData(copy)
+    //         })
+    //         .catch(() => {console.log('failure')})
+    // })
 
     return (
         <div className="mypage">
@@ -36,9 +35,9 @@ const Mypage = (props) => {
                         <button>프로필편집</button>
                     </div>
                     <ul className="count">
-                        <li> 게시물 <strong>{ posts }</strong> </li>
-                        <li> 팔로워 <strong>{ follower }</strong> </li>
-                        <li> 팔로우 <strong>{ follow }</strong> </li>
+                        <li> 게시물 <strong>101</strong> </li>
+                        <li> 팔로워 <strong>307</strong> </li>
+                        <li> 팔로우 <strong>711</strong> </li>
                     </ul>
                     <p> {props.state.myName} </p>
                 </div>
@@ -64,19 +63,19 @@ const Mypage = (props) => {
                     </li>
                 </ul>
             </div>
-
+       
             <div className="feeds">
-                {/* {
-                    data.map((a, i) => {
+                {
+                    props.feed.map((a, i) => {
                         return (
                             <div className="feed_line">
-                                <div> {a[i]} </div>
-                                <div></div>
-                                <div></div>
+                                <img className="feed" src={props.feed[i].picture.large} />
+                                <img className="feed" src={props.feed[(i+1)].picture.large} />
+                                <img className="feed" src={props.feed[(i+2)].picture.large} />
                             </div>
-                        )
+                        );
                     }) 
-                }*/}
+                }
             </div>
         </div>
     );
@@ -84,7 +83,8 @@ const Mypage = (props) => {
 
 function stateToProps(state) {
     return {
-        state: state.reducer
+        state: state.reducer,
+        feed: state.reducer2
     }
 }
 export default connect(stateToProps)(Mypage); 

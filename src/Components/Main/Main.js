@@ -167,7 +167,8 @@ const Main = (props) => {
 
 function stateToProps(state) {
     return {
-        state: state.reducer
+        state: state.reducer,
+        feed: state.reducer2
     }
 }
 export default connect(stateToProps)(Main); 

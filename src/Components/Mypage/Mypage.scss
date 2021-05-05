@@ -135,7 +135,21 @@ body {
         .feeds {
             display: flex;
             flex-direction: column;
-            margin-bottom: 28px;
+            margin: 10px auto 0;
+            width: 935px;
+
+            .feed_line {
+                display: flex;
+                width: 100%;
+                margin-bottom: 28px;
+
+                .feed {
+                    display: inline-block;
+                    width: 293px;
+                    height: 100%;
+                    margin-right: 28px;
+                }
+            }
         }
     }
 }
