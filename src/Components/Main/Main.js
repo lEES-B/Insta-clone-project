@@ -6,23 +6,23 @@ import { connect } from 'react-redux';
 
 const Main = (props) => {
 
-    let [users, setUsers] = useState([
-        {
-            name: 'ashley',
-            country: 'ireland',
-            picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
-        }
-    ]);
-    useEffect(() => {
-        axios.get('https://randomuser.me/api?results=50')
-        .then((result) => {
-            //console.log(result.data)
-            let copy = [...users];
-            copy = [...users, ...result.data];
-            setUsers(copy)
-        })
-        .catch(() => {console.log('failure')})
-    }, [])
+    // let [users, setUsers] = useState([
+    //     {
+    //         name: 'ashley',
+    //         country: 'ireland',
+    //         picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
+    //     }
+    // ]);
+    // useEffect(() => {
+    //     axios.get('https://randomuser.me/api?results=50')
+    //     .then((result) => {
+    //         //console.log(result.data)
+    //         let copy = [...users];
+    //         copy = [...users, ...result.data];
+    //         setUsers(copy)
+    //     })
+    //     .catch(() => {console.log('failure')})
+    // }, [])
 
     let [feed, setFeed] = useState('https://image.tmdb.org/t/p/w1280' );
     // IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
@@ -46,11 +46,11 @@ const Main = (props) => {
                     <div className="user_container">
                         <div className="user_lists">
                             {
-                                users.map((a,i) => {
+                                props.users.map((a,i) => {
                                     return (
                                         <div key={i}>
-                                            <img src={users[i].picture.large} />
-                                            <p> { users[i].name } </p>
+                                            <img src={props.users[i].picture.large} />
+                                            <p> { props.users[i].name.last } </p>
                                         </div>
                                     )
                                 })
@@ -61,20 +61,20 @@ const Main = (props) => {
                     <div className="feeds">
                         <div className="feeds_form">
                             {
-                                users.map((a,i) => {
+                                props.users.map((a,i) => {
                                     return (
                                         <div className="feeds_container" key={i}>
                                             <article>
                                                 <div className="id_info">
-                                                    <img src={users[i].picture.large} />
+                                                    <img src={props.users[i].picture.large} />
                                                     <div className="id_info_user">
-                                                        <p><strong> { users[i].name } </strong></p>
-                                                        <p> { users[i].country } </p>
+                                                        <p><strong> { props.users[i].name.last } </strong></p>
+                                                        <p> { props.users[i].country } </p>
                                                     </div>
                                                 </div>
 
                                                 <div className="img_info">
-                                                    <img src= {'https://image.tmdb.org/t/p/w1280' + feed.poster_path} />
+                                                    {/* <img src= {'https://image.tmdb.org/t/p/w1280' + feed.poster_path} /> */}
                                                 </div>
 
                                                 <div className="review_info">
@@ -136,12 +136,12 @@ const Main = (props) => {
 
                         <div className="contents">
                             {
-                                users.map((a,i) => {
+                                props.users.map((a,i) => {
                                     return (
                                         <div className="user_contents">
-                                            <img src={users[i].picture.large} />
+                                            <img src={props.users[i].picture.large} />
                                             <div className="myId">
-                                                <p> <strong>{users[i].name}</strong> </p>
+                                                <p> <strong>{props.users[i].name.last}</strong> </p>
                                                 <p>회원님을 위한 추천</p>
                                             </div>
                                             <span>팔로우</span>
@@ -168,7 +168,7 @@ const Main = (props) => {
 function stateToProps(state) {
     return {
         state: state.reducer,
-        feed: state.reducer2
+        users: state.reducer2
     }
 }
 export default connect(stateToProps)(Main); 

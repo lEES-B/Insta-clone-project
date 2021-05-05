@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import Nav from '../Nav/Nav';
 import './Mypage.scss';
 import { connect } from 'react-redux';
 
 
 const Mypage = (props) => {
-
-    // let [data, setData] = useState([]);
-
-    // useEffect(() => {
-    //     axios.get('https://randomuser.me/api?results=50')
-    //         .then((result) => {
-    //             console.log(result.data.results)  
-    //             let copy = data;
-    //             copy.push(result.data.results);
-    //             setData(copy)
-    //         })
-    //         .catch(() => {console.log('failure')})
-    // })
 
     return (
         <div className="mypage">
