@@ -68,10 +68,12 @@ const Mypage = (props) => {
                 {
                     props.feed.map((a, i) => {
                         return (
-                            <div className="feed_line">
-                                <img className="feed" src={props.feed[i].picture.large} />
-                                <img className="feed" src={props.feed[(i+1)].picture.large} />
-                                <img className="feed" src={props.feed[(i+2)].picture.large} />
+                            <div key={i}>
+                            {
+                                (i % 3 === 2)  && (i !== 0)
+                                ? ( <img className="feednext" src={props.feed[i].picture.medium} />)
+                                : ( <img className="feed" src={props.feed[i].picture.medium} /> )
+                            }  
                             </div>
                         );
                     }) 
