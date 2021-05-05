@@ -134,10 +134,9 @@ body {
 
         .feeds {
             display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             margin: 10px auto 0;
-            max-width: 935px;
+            max-width: 963px;
             width: 100%;
 
             .feed {
@@ -147,13 +146,6 @@ body {
                 margin: 0 28px 28px 0;
             }
 
-            .feednext {
-                float: left;
-                width: 293px;
-                height: 293px;
-                margin-right: 0;
-                
-            }
         }
     }
 }
