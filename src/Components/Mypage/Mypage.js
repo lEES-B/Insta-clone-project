@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Nav from '../Nav/Nav';
 import './Mypage.scss';
+import { connect } from 'react-redux';
 
 
-const Mypage = () => {
+const Mypage = (props) => {
 
     let [posts, setPosts] = useState(101);
     let [follower, setFollower] = useState(307);
@@ -26,12 +27,12 @@ const Mypage = () => {
 
             <div className="profile">
                 <div className="profile_img">
-                    <div className="img"></div>
+                    <img src={props.state.myImage} />
                 </div>
 
                 <div className="profile_contents">
                     <div className="profile_id">
-                        <h2> MyInstaId05 </h2>
+                        <h2> {props.state.myId} </h2>
                         <button>프로필편집</button>
                     </div>
                     <ul className="count">
@@ -39,7 +40,7 @@ const Mypage = () => {
                         <li> 팔로워 <strong>{ follower }</strong> </li>
                         <li> 팔로우 <strong>{ follow }</strong> </li>
                     </ul>
-                    <p>새봄</p>
+                    <p> {props.state.myName} </p>
                 </div>
             </div>
 
@@ -81,4 +82,9 @@ const Mypage = () => {
     );
 };
 
-export default Mypage;
+function stateToProps(state) {
+    return {
+        state: state.reducer
+    }
+}
+export default connect(stateToProps)(Mypage); 

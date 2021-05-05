@@ -31,13 +31,13 @@ $text_grey: #8e8e8e;
                 height: 50px;
                 display: flex;
                 // justify-content: space-evenly;
-                list-style: none;
 
-                li {
+                div {
                     position: absolute;
                     top: -20px;               
                     margin: 0;
                     padding: 0;
+                    
                     img {
                         width: 66px;
                         height: 66px;
@@ -67,7 +67,6 @@ $text_grey: #8e8e8e;
             .feeds_form {
                 display: flex;
                 flex-direction: column;
-                list-style: none;
                 margin: 0;
                 padding: 0;
                 
@@ -124,9 +123,6 @@ $text_grey: #8e8e8e;
                                 left: 0;
                                 width: 99.8%;
                                 height: 400px;
-                                background-image: url('../../image/profile_img.jpg');
-                                background-position: center;
-                                background-size: contain;
                                 border-bottom: 1px solid $border;
                             }
                         }
@@ -259,12 +255,10 @@ $text_grey: #8e8e8e;
             margin-bottom: 10px;
             margin-top: 18px;
 
-            .myImg {
+            img {
                 margin-right: 12px;
                 width: 66px;
                 height: 66px;
-                background-image: url('../../image/profile_img.jpg');
-                background-size: cover;
                 border-radius: 50%;
             }
 

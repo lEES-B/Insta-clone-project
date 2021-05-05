@@ -2,32 +2,41 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Nav from '../Nav/Nav';
 import './Main.scss';
+import { connect } from 'react-redux';
 
-const Main = () => {
+const Main = (props) => {
 
     let [users, setUsers] = useState([
         {
             name: 'ashley',
             country: 'ireland',
             picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
-        },
-        {
-            name: 'billy',
-            country: 'ohio',
-            picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
         }
     ]);
-    let [love, setLove] = useState(0);
-    let [review, setReview] = useState('')
-
     useEffect(() => {
         axios.get('https://randomuser.me/api?results=50')
         .then((result) => {
             //console.log(result.data)
-            setUsers([...users, ...result.data])
+            let copy = [...users];
+            copy = [...users, ...result.data];
+            setUsers(copy)
         })
         .catch(() => {console.log('failure')})
     }, [])
+
+    let [feed, setFeed] = useState('https://image.tmdb.org/t/p/w1280' );
+    // IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
+    useEffect(() => {
+        axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
+            .then(result => {
+                //console.log(result.data)
+            })
+            .catch(() => {console.log('failure')})
+    }, [])
+
+    let [love, setLove] = useState(0);
+    let [review, setReview] = useState('');
+
 
     return (
         <div>
@@ -35,18 +44,18 @@ const Main = () => {
             <div className="main_container">
                 <div className="main_left">                   
                     <div className="user_container">
-                        <ul className="user_lists">
+                        <div className="user_lists">
                             {
                                 users.map((a,i) => {
                                     return (
-                                        <li key={i}>
+                                        <div key={i}>
                                             <img src={users[i].picture.large} />
                                             <p> { users[i].name } </p>
-                                        </li>
+                                        </div>
                                     )
                                 })
                             }
-                        </ul>
+                        </div>
                     </div>
 
                     <div className="feeds">
@@ -65,7 +74,7 @@ const Main = () => {
                                                 </div>
 
                                                 <div className="img_info">
-                                                    <img src= { users[i].picture.large } />
+                                                    <img src= {'https://image.tmdb.org/t/p/w1280' + feed.poster_path} />
                                                 </div>
 
                                                 <div className="review_info">
@@ -111,10 +120,10 @@ const Main = () => {
 
                 <div className="main_right">
                     <div className="myInfo">
-                        <div className="myImg"></div>
+                        <img  src={ props.state.myImage } />
                         <div className="myId">
-                            <p><strong>MyInstaId05</strong></p>
-                            <p className="myName">새봄</p>
+                            <p><strong> {props.state.myId} </strong></p>
+                            <p className="myName">{props.state.myName}</p>
                         </div>
                         <span>전환</span>
                     </div>
@@ -156,4 +165,9 @@ const Main = () => {
     );
 };
 
-export default Main;
+function stateToProps(state) {
+    return {
+        state: state.reducer
+    }
+}
+export default connect(stateToProps)(Main); 
