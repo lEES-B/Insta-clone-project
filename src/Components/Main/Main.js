@@ -12,6 +12,10 @@ const Main = (props) => {
         axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
             .then(result => {
                 console.log(result.data)
+                let copy = [...feed]
+                copy.push(result.data);
+                setFeed(copy)
+                console.log(setFeed)
             })
             .catch(() => {console.log('failure')})
     }, [])
@@ -56,7 +60,7 @@ const Main = (props) => {
                                             </div>
 
                                             <div className="img_info">
-                                                <img src= {'https://image.tmdb.org/t/p/w1280' + feed.poster_path} />
+                                                <img src= {'https://image.tmdb.org/t/p/w1280' + feed[i].results.poster_path} />
                                             </div>
 
                                             <div className="review_info">
