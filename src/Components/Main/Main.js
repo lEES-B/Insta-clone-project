@@ -6,24 +6,6 @@ import { connect } from 'react-redux';
 
 const Main = (props) => {
 
-    // let [users, setUsers] = useState([
-    //     {
-    //         name: 'ashley',
-    //         country: 'ireland',
-    //         picture: { large: "https://randomuser.me/api/portraits/men/78.jpg" }
-    //     }
-    // ]);
-    // useEffect(() => {
-    //     axios.get('https://randomuser.me/api?results=50')
-    //     .then((result) => {
-    //         //console.log(result.data)
-    //         let copy = [...users];
-    //         copy = [...users, ...result.data];
-    //         setUsers(copy)
-    //     })
-    //     .catch(() => {console.log('failure')})
-    // }, [])
-
     let [feed, setFeed] = useState('https://image.tmdb.org/t/p/w1280' );
     // IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
     useEffect(() => {
@@ -60,62 +42,59 @@ const Main = (props) => {
                     </div>
 
                     <div className="feeds">
-                        <div className="feeds_form">
-                            {
-                                props.users.map((a,i) => {
-                                    return (
-                                        <div className="feeds_container" key={i}>
-                                            <article>
-                                                <div className="id_info">
-                                                    <img src={props.users[i].picture.large} />
-                                                    <div className="id_info_user">
-                                                        <p><strong> { props.users[i].name.last } </strong></p>
-                                                        <p> { props.users[i].country } </p>
+                        {
+                            props.users.map((a,i) => {
+                                return (
+                                    <div className="feeds_container" key={i}>
+                                        <article>
+                                            <div className="id_info">
+                                                <img src={props.users[i].picture.large} />
+                                                <div className="id_info_user">
+                                                    <p><strong> { props.users[i].name.last } </strong></p>
+                                                    <p> { props.users[i].location.country } </p>
+                                                </div>
+                                            </div>
+
+                                            <div className="img_info">
+                                                <img src= {'https://image.tmdb.org/t/p/w1280' + feed.poster_path} />
+                                            </div>
+
+                                            <div className="review_info">
+                                                <div className="icons">
+                                                    <div className="icons_left">
+                                                        <div className="heart" onClick={() => {
+                                                            setLove(love+1)
+                                                        }}></div>
+                                                        <div className="review"></div>
+                                                        <div className="message"></div>
+                                                    </div>
+                                                    <div className="icons_right">
+                                                        <div className="save"></div>
                                                     </div>
                                                 </div>
 
-                                                <div className="img_info">
-                                                    {/* <img src= {'https://image.tmdb.org/t/p/w1280' + feed.poster_path} /> */}
+                                                <div className="reviews">
+                                                    <p><strong>좋아요 {love}개</strong></p>
+                                                    <div className="users_reviews">{ review }</div>
                                                 </div>
 
-                                                <div className="review_info">
-                                                    <div className="icons">
-                                                        <div className="icons_left">
-                                                            <div className="heart" onClick={() => {
-                                                                setLove(love+1)
-                                                            }}></div>
-                                                            <div className="review"></div>
-                                                            <div className="message"></div>
-                                                        </div>
-                                                        <div className="icons_right">
-                                                            <div className="save"></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="reviews">
-                                                        <p><strong>좋아요 {love}개</strong></p>
-                                                        <div className="users_reviews">{ review }</div>
-                                                    </div>
-
-                                                    <div className="write">
-                                                        <input type="text" placeholder="댓글달기.." onChange={(e) => {
-                                                            setReview(e.target.value)
-                                                        }} />
-                                                        <div className="btn" onClick={() => {
-                                                            let reviewCopy = [...review]
-                                                            let inputCopy = review;
-                                                            reviewCopy.unshift(inputCopy)
-                                                            setReview(reviewCopy)
-                                                        }}>게시</div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    )
-                                })
-                                
-                            }
-                        </div>
+                                                <form className="write">
+                                                    <textarea type="text" placeholder="댓글달기.." onChange={(e) => {
+                                                        setReview(e.target.value)
+                                                    }}></textarea>
+                                                    <button className="btn" onClick={() => {
+                                                        let reviewCopy = [...review]
+                                                        let inputCopy = review;
+                                                        reviewCopy.unshift(inputCopy)
+                                                        setReview(reviewCopy)
+                                                    }} type="submit">게시</button>
+                                                </form>
+                                            </div>
+                                        </article>
+                                    </div>
+                                )
+                            })                              
+                        }
                     </div>
                 </div>
 
@@ -172,3 +151,4 @@ function stateToProps(state) {
     }
 }
 export default connect(stateToProps)(Main); 
+

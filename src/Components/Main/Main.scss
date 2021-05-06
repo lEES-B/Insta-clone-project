@@ -14,14 +14,13 @@ $text_grey: #8e8e8e;
     .main_left {
         display: flex;
         flex-direction: column;
-        float: left;
         margin-right: 28px;
         max-width: 614px;
         width: 100%;
 
         .user_container {
             margin: 0 0 24px;
-            padding: 16px 0 14px;
+            padding: 16px 0;
             border: 1px solid $border;
             border-radius: 3px;
 
@@ -56,184 +55,180 @@ $text_grey: #8e8e8e;
             }
         }
 
+        /* 전체 세로 (좌) */
         .feeds {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
             width: 614px;
-            height: 605px;
-            border: 1px solid $border;
-
-            .feeds_form {
+            height: auto;
+                
+            /* 반목문 frame */
+            .feeds_container {
+                position: relative;
                 display: flex;
                 flex-direction: column;
-                margin: 0;
-                padding: 0;
+                width: 100%;
+                height: 700px;
+                border: 1px solid $border;
                 
-                .feeds_container {
-                    position: relative;
-                    
-                    article{
-                        position: absolute;
-                        top: 0;
-                        left: 0;;
-                        width: 616px;
+                article {
+                    position: absolute;
+                    top: 0; 
+                    left: 0;
+                    width: 100%;
 
-                        .id_info {
-                            position: relative;
-                            display: flex;
-                            height: 30px;
-                            padding: 16px;
-                            border-bottom: 1px solid $border;
+                    .id_info {
+                        display: flex;
+                        height: 28px;
+                        padding: 16px;
+                        border-bottom: 1px solid $border;
 
-                            img {
-                                position: absolute;
-                                top: 13px;
-                                left: 10px;
-                                width: 42px;
-                                height: 42px;
-                                border-radius: 50%;
-                            }
-
-                            p {
-                                font-size: 12px;
-                            }
-
-                            .id_info_user {
-                                display: flex;
-                                flex-direction: column;
-                                margin: 0;
-                                margin-left: 20px;
-                                padding: 0;
-                                padding-left: 30px;
-
-                                p {
-                                    margin: 0;
-                                }
-                            }
+                        img {
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 50%;
                         }
 
-                        .img_info {
-                            position: relative;
-                            width: 100%;
-
-                            img {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 99.8%;
-                                height: 400px;
-                                border-bottom: 1px solid $border;
-                            }
+                        p {
+                            font-size: 12px;
                         }
 
-                        .review_info {
-                            position: absolute;
-                            top: 470px;
+                        .id_info_user {
                             display: flex;
                             flex-direction: column;
-                            height: 241px;
+                            margin: 0;
+                            padding: 0;
+                            padding-left: 20px;
 
-                            .icons {
-                                display: flex;
-                                justify-content: space-between;
-
-                                .icons_left {
-                                    display: flex;
-                                    div {
-                                        width: 30px;
-                                        height: 30px; 
-                                        margin-right: 10px;
-                                        margin-bottom: 10px;
-                                        background-size: 300px;
-                                        cursor: pointer;
-                                    }
-                                    .heart {
-                                        margin-left: 10px;
-                                        background-image: url('../../image/instagram-icons.png');
-                                        background-position: 13% 20%;
-                                    }
-                                    .review {
-                                        background-image: url('../../image/instagram-icons.png');
-                                        background-position: 28% 20%;
-                                    }
-                                    .message {
-                                        background-image: url('../../image/instagram-icons.png');
-                                        background-position: 42% 20%;
-                                    }
-                                }
-
-                                .icon_right {
-                                    .save {
-                                        width: 30px;
-                                        height: 30px; 
-                                        margin-right: 10px;
-                                        background-size: 300px;
-                                        background-image: url('../../image/instagram-icons.png');
-                                        background-position: 28% 20%;
-                                    }
-                                }
+                            p {
+                                margin: 0;
+                                text-align: left;
                             }
+                        }
+                    }
 
-                            .reviews {
+                    .img_info {
+                        width: 100%;
+                        height: 400px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                        }
+                    }
+
+                    .review_info {              
+                        display: flex;
+                        flex-direction: column;
+                        height: 241px;
+
+                        .icons {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 5px;
+
+                            .icons_left {
                                 display: flex;
-                                flex-direction: column;
 
-                                p {
-                                    margin: 5px;
-                                    padding-left: 10px;
-                                    text-align: left;
-                                }
-
-                                .users_reviews {
-                                    height: auto;
-                                }
-                            }
-
-                            .write {
-                                position: relative;
-                                display: flex;
-                                justify-content: space-between;
-                                width: 616px;
-                                margin-top: 14px;
-                            
-
-                                input {
-                                    padding-left: 16px;
-                                    padding-right: 16px;
-                                    width: 100%;
-                                    height: 56px;
-                                    border-top: 1px solid rgb(187, 183, 183);
-                                    border: 1px solid $border;
-                                    
-                                    font-size: 14px;
-                                }
-
-                                .btn {
-                                    position: absolute;
-                                    right: 0;
-                                    margin: 4px;
-                                    padding: 0;
-                                    width: 80px;
-                                    color: $lightBlue;
-                                    background-color: #ffffff;
-                                    font-weight: 600;
-                                    border: 0;
-                                    opacity: .3;
-                                    line-height: 50px;
+                                div {
+                                    width: 30px;
+                                    height: 30px; 
+                                    margin-right: 10px;
+                                    margin-bottom: 10px;
+                                    background-size: 300px;
                                     cursor: pointer;
                                 }
-
-                                button:hover {
-                                    font-weight: 700;
-                                    opacity: 1;
+                                .heart {
+                                    margin-left: 10px;
+                                    background-image: url('../../image/instagram-icons.png');
+                                    background-position: 13% 20%;
                                 }
+                                .review {
+                                    background-image: url('../../image/instagram-icons.png');
+                                    background-position: 28% 20%;
+                                }
+                                .message {
+                                    background-image: url('../../image/instagram-icons.png');
+                                    background-position: 42% 20%;
+                                }
+                            }
+
+                            .icons_right {
+                                
+                                margin-right: 5px;
+
+                                .save {
+                                    width: 30px;
+                                    height: 30px; 
+                                    margin-right: 10px;
+                                    background-size: 300px;
+                                    background-image: url('../../image/instagram-icons.png');
+                                    background-position: 56% 20%;
+                                }
+                            }
+                        }
+
+                        .reviews {
+                            display: flex;
+                            flex-direction: column;
+
+                            p {
+                                margin: 5px;
+                                padding-left: 10px;
+                                text-align: left;
+                            }
+
+                            .users_reviews {
+                                height: auto;
+                            }
+                        }
+
+                        .write {
+                            display: flex;
+                            width: 100%;
+                            margin-top: 20px;
+                            border-top: 1px solid rgb(224, 221, 221);
+                        
+
+                            textarea {
+                                background: 0 0;
+                                border: 0;
+                                width: 100%;
+                                height: 18px;
+                                max-height: 80px;
+                                outline: 0;
+                                padding: 10px;
+                                resize: none;                                    
+                            }
+
+                            .btn {
+                                display: inline;
+                                padding: 0;
+                                width: 28px;
+                                max-height: 80px;
+                                height: 18px;
+                                color: $lightBlue;
+                                background-color: transparent;
+                                border: 0;
+                                text-align: center;
+                                text-overflow: ellipsis;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 18px;
+                                opacity: .3;
+                                cursor: pointer;
+                            }
+
+                            button:hover {
+                                font-weight: 700;
+                                opacity: 1;
                             }
                         }
                     }
                 }
             }
-        }
+        }     
     }
 
     .main_right {
