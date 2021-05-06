@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 
 const Main = (props) => {
 
-    let [feed, setFeed] = useState('https://image.tmdb.org/t/p/w1280' );
+    let [feed, setFeed] = useState([]);
     // IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
             .then(result => {
-                //console.log(result.data)
+                console.log(result.data)
             })
             .catch(() => {console.log('failure')})
     }, [])
@@ -79,9 +79,10 @@ const Main = (props) => {
                                                 </div>
 
                                                 <form className="write">
-                                                    <textarea type="text" placeholder="댓글달기.." onChange={(e) => {
+                                                    <input type="text" placeholder="댓글 달기.." onChange={(e) => {
                                                         setReview(e.target.value)
-                                                    }}></textarea>
+                                                    }} />
+                                                    <div className="smile"></div>
                                                     <button className="btn" onClick={() => {
                                                         let reviewCopy = [...review]
                                                         let inputCopy = review;
