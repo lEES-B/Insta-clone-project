@@ -11,9 +11,9 @@ const Main = (props) => {
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
             .then(result => {
-                console.log(result.data)
+                console.log(result.data.results)
                 let copy = [...feed]
-                copy.push(result.data);
+                copy.push([...result.data.results]);
                 setFeed(copy)
                 console.log(setFeed)
             })
@@ -60,7 +60,7 @@ const Main = (props) => {
                                             </div>
 
                                             <div className="img_info">
-                                                <img src= {'https://image.tmdb.org/t/p/w1280' + feed[i].results.poster_path} />
+                                                <img src= {"https://image.tmdb.org/t/p/w1280" + feed[i].poster_path} />
                                             </div>
 
                                             <div className="review_info">

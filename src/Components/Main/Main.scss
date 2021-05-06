@@ -43,6 +43,7 @@ $text_grey: #8e8e8e;
                         padding: 2px; 
                         border: 2px solid #c42d91;
                         border-radius: 50%;
+                        z-index: 1;
                     }
 
                     p {
@@ -213,6 +214,7 @@ $text_grey: #8e8e8e;
                                 background-position: center;
                                 background-color: transparent;
                             }
+
 
                             .btn {
                                 width: 100px;
