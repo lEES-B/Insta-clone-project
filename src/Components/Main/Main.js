@@ -20,7 +20,6 @@ const Main = (props) => {
                 setFeed(result.data.results)
             })
             .catch(() => { console.log('failure') })
-
     }, [])
 
     let [love, setLove] = useState(0);
@@ -62,7 +61,7 @@ const Main = (props) => {
                                             </div>
 
                                             <div className="img_info">
-                                                <img src= {"https://image.tmdb.org/t/p/w1280" + feed[0].poster_path} />
+                                                <img src= {"https://image.tmdb.org/t/p/w1280" + feed[i].poster_path} />
                                             </div>
 
                                             <div className="review_info">
