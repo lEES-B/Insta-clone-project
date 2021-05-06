@@ -11,7 +11,6 @@ const Main = (props) => {
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
             .then(result => {
-                console.log(result.data.results)
                 let copy = [...feed]
                 console.log(copy)
                 copy.push(...result.data.results);
@@ -20,7 +19,7 @@ const Main = (props) => {
             })
             .catch(() => {console.log('failure')})
     }, [])
-
+    console.log(feed[0].poster_path)
     let [love, setLove] = useState(0);
     let [review, setReview] = useState('');
 
