@@ -13,7 +13,8 @@ const Main = (props) => {
             .then(result => {
                 console.log(result.data.results)
                 let copy = [...feed]
-                copy.push([...result.data.results]);
+                console.log(copy)
+                copy.push(...result.data.results);
                 setFeed(copy)
                 console.log(setFeed)
             })
