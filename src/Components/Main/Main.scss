@@ -25,7 +25,7 @@ $text_grey: #8e8e8e;
             border-radius: 3px;
 
             .user_lists {
-                position: relative;
+                position:s;
                 width: 98%;
                 height: 84px;
                 padding-left: 10px;
@@ -245,10 +245,9 @@ $text_grey: #8e8e8e;
     }
 
     .main_right {
-        position: absolute;
-        top: 30px;
-        right: 0;
-        right: 0;
+        position: fixed;
+        top: 70px;
+        right: 100px;
         display: flex;
         flex-direction: column;
         max-width: 293px;

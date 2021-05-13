@@ -7,30 +7,35 @@ import { connect } from 'react-redux';
 
 const Main = (props) => {
     
-    let [feed, setFeed] = useState([
-        { poster_path: "/xGuOF1T3WmPsAcQEQJfnG7Ud9f8.jpg" }
-    ]);
+    let [feed, setFeed] = useState([]);
+// https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1
+    
+    // useEffect(() => {
+    //     const gets = async() => {
+    //         axios.get(Feed)
+    //             .then((result) => {
+    //                 console.log(result.data) // arr 20개
+    //                 setFeed(result.data)
+    //             })
+    //             .catch(() => { console.log('failure') })
+    //     }
+    //     gets()       
+    // }, [feed]); 
 
     useEffect(() => {
-
-        function gets() {
-            axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
-                .then((result) => {
-                    console.log(result.data) // arr 20개
-
-                    setFeed(result.data.results)
-                })
-                .catch(() => { console.log('failure') })
-        }
-        gets()
-        
-    }, []); 
+        axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
+            .then((result) => {
+                setFeed([...feed, ...result.data.results])
+            })
+            // .then(({ results }) => setFeed(results));
+            // console.log('results')
+    }, []);
 
 
     let [love, setLove] = useState(0);
     let [review, setReview] = useState('');
 
-    // console.log(feed)
+    //console.log(feed)
 
     return (
         <div>
@@ -67,7 +72,7 @@ const Main = (props) => {
                                             </div>
 
                                             <div className="img_info">
-                                                <img src= {"https://image.tmdb.org/t/p/w1280" + feed[0].poster_path} />
+                                                <img src= {"https://image.tmdb.org/t/p/w1280" + feed[i].poster_path} />
                                             </div>
 
                                             <div className="review_info">
