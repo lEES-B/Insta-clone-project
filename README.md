@@ -1,11 +1,12 @@
 # React Project: Instagram Clone
 인스타그램(Instagram) 웹사이트 클론 프로젝트
 
+![insta](https://user-images.githubusercontent.com/71425369/118142835-b6f22e00-b445-11eb-8cf0-f89045dc7f0c.PNG)
 
 ## Skill Stack
 
 * HTML5 / CSS3 / Javascript
-* React.js(CRA): Functional Component
+* React.js: Functional Component
 * Redux
 * Sass
 * react-router-dom
