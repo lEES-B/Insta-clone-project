@@ -6,8 +6,9 @@ import Feed from '../../FeedData';
 import { connect } from 'react-redux';
 
 const Main = (props) => {
-    
     let [feed, setFeed] = useState([]);
+    let [love, setLove] = useState(0);
+    let [review, setReview] = useState('');
 // https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1
     
     // useEffect(() => {
@@ -22,20 +23,24 @@ const Main = (props) => {
     //     gets()       
     // }, [feed]); 
 
+    // useEffect(
+    //     async () => {
+    //         const result = await axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
+    //         setFeed([...feed, ...result.data.results])
+    // }, []);
+
     useEffect(() => {
+        console.log(Feed)
         axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
-            .then((result) => {
-                setFeed([...feed, ...result.data.results])
-            })
-            // .then(({ results }) => setFeed(results));
-            // console.log('results')
-    }, []);
+           .then((result) => {
+               setFeed([...feed, ...result.data])
+           })
+        .catch(() => {console.log('fail')})
+    })
+        
 
 
-    let [love, setLove] = useState(0);
-    let [review, setReview] = useState('');
-
-    //console.log(feed)
+    console.log(feed)
 
     return (
         <div>
@@ -72,7 +77,7 @@ const Main = (props) => {
                                             </div>
 
                                             <div className="img_info">
-                                                <img src= {"https://image.tmdb.org/t/p/w1280" + feed[i].poster_path} />
+                                                <img src= {feed[i].poster} />
                                             </div>
 
                                             <div className="review_info">
