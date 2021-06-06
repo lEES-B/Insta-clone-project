@@ -29,18 +29,18 @@ const Main = (props) => {
     //         setFeed([...feed, ...result.data.results])
     // }, []);
 
-    useEffect(() => {
-        console.log(Feed)
-        axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
-           .then((result) => {
-               setFeed([...feed, ...result.data])
-           })
-        .catch(() => {console.log('fail')})
-    })
+    // useEffect(() => {
+    //     console.log(Feed)
+    //     axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1')
+    //        .then((result) => {
+    //            setFeed([feed, ...result.data])
+    //        })
+    //     .catch(() => {console.log('fail')})
+    // })
         
 
 
-    console.log(feed)
+    //console.log(posts)
 
     return (
         <div>
@@ -77,7 +77,7 @@ const Main = (props) => {
                                             </div>
 
                                             <div className="img_info">
-                                                <img src= {feed[i].poster} />
+                                                <img src= {props.posts[i].poster} />
                                             </div>
 
                                             <div className="review_info">
@@ -169,7 +169,8 @@ const Main = (props) => {
 function stateToProps(state) {
     return {
         state: state.reducer,
-        users: state.reducer2
+        users: state.reducer2,
+        posts: state.reducer3
     }
 }
 export default connect(stateToProps)(Main); 
